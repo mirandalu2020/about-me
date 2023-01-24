@@ -15,3 +15,4 @@ This is a project that builds a website that's about me. I explored basic HTML, 
 ### Reflections and Comments
 
 - This website was made without any functions, so it was very tedious to write when there were repeated `if` statements. This project made me really apprecate using functions.
+![LightHouse Scan Result](img/lab2LightHouse.png)

@@ -57,7 +57,7 @@ else {
 let doILikeBagel = prompt('Do I like to bagels? Y/N').toLowerCase();
 if (doILikeBagel === 'yes' || doILikeBagel === 'y') {
   //console.log('I actually can survive without pizza!');
-  alert('I actually can survive without pizza!');
+  alert('I actually can survive without bagels!');
 }
 else if (doILikeBagel === 'no' || doILikeBagel === 'n') {
   //console.log('You are correct!');
@@ -122,11 +122,13 @@ if (userGuess === false) {
 let pizzaToppings = ['mushrooms','truffle oil','olives'];
 attemptsRemaining = 6;
 let correct = false;
+
 while (attemptsRemaining > 0 && !correct) {
   attemptsRemaining--;
   //console.log(attemptsRemaining);
 
   let guessToppings = prompt('What\'s my favorite pizza topping?').toLowerCase();
+
   for (let i=0; i<pizzaToppings.length; i++){
     if (guessToppings === pizzaToppings[i] || guessToppings === 'mushroom' || guessToppings === 'olive'){
       correct = true;

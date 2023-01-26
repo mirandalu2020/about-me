@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    
 }
 
 body {
@@ -7,6 +8,7 @@ body {
     margin-top:5%;
     margin-left: 5%;
     margin-right: 5%;
+    border: 2px solid black;
 }
 
 h1 {
@@ -27,25 +29,36 @@ p {
     padding-bottom: 3%;
 }
 
-span {
+div {
     display: block;
     padding-bottom: 50px;
-    padding-top: 50px;
+    padding-top: 20px;
     box-sizing: border-box;
     border-block: solid 2px rgb(121, 97, 209);
+    /* position: static; */
+}
+
+#workExperience {
+    font-family: monospace;
+    list-style-type: circle;
+    margin-left: 5%;
+    margin-top: 20%;
+    font-size:18px;
+    float: left;
+    position: absolute;
+    width: 30%;
 }
 
 ul {
     font-family: monospace;
     list-style-type: circle;
     margin-left: 5%;
+    margin-top: 20%;
     font-size:18px;
     float: left;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-top: 30%;
+    padding-top: 5%;
     position: relative;
-
+    width: 40%;
 }
 
 ul>li {
@@ -59,20 +72,33 @@ ul>li {
     width:50%;
     border-radius:15px;
     display: inline-block;
+    /* position: static; */
+    margin-left:5%;
 
 }
 
-ol {
+#pizzaToppings {
     font-family: monospace;
     list-style-type: decimal;
     margin-right: 5%;
     font-size:18px;
     float: right;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-top: 7%;
     position: relative;
-    /* border: solid 2px black; */
+    border: solid 2px black;
+    /* margin-bottom: 5%; */
+}
+
+ol {
+    font-family: monospace;
+    list-style-type: decimal;
+    margin-right: 10%;
+    font-size:18px;
+    float: right;
+    position: relative;
+    border: solid 2px black;
+    display:block;
+    width: 30%;
+    margin-left:50%;
 }
 
 ol>li {
@@ -86,6 +112,7 @@ ol>li {
     margin-top: 2rem;
     border-radius:15px;
     display: inline-block;
+    position:relative;
 }
 
 footer {
@@ -96,4 +123,6 @@ footer {
     background-color: rgb(204, 252, 252);
     padding: 10px;
     display: block;
+    position:relative;
+    margin-top: 10%;
 }

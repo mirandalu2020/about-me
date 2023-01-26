@@ -86,17 +86,17 @@ else {
 
 let placeTraveled = 21;
 let attemptsRemaining = 4;
-let userGuess = [];
+let userGuess = false;
 
 while (attemptsRemaining > 0) {
   attemptsRemaining--;
-  console.log(`Attempts remaining: ${attemptsRemaining}`);
+  //console.log(`Attempts remaining: ${attemptsRemaining}`);
   let guessNumber = parseInt(prompt('How many places have I traveled to in the US?'));
-  userGuess.push(guessNumber);
 
   if (guessNumber === placeTraveled) {
     alert('You are correct!');
     score += 1;
+    userGuess = true;
     break;
   }
 
@@ -113,7 +113,7 @@ while (attemptsRemaining > 0) {
   }
 }
 
-if (userGuess.includes(placeTraveled) === false) {
+if (userGuess === false) {
   alert(`I've been to ${placeTraveled} in the United States`);
 }
 
@@ -121,30 +121,29 @@ if (userGuess.includes(placeTraveled) === false) {
 
 let pizzaToppings = ['mushrooms','truffle oil','olives'];
 attemptsRemaining = 6;
-while (attemptsRemaining > 0) {
+let correct = false;
+while (attemptsRemaining > 0 && !correct) {
+  attemptsRemaining--;
+  //console.log(attemptsRemaining);
+
   let guessToppings = prompt('What\'s my favorite pizza topping?').toLowerCase();
-  attemptsRemaining -= 1;
-  //console.log(attemptsRemaining)
-  if (guessToppings.length === 0) {
-    alert('Please participate in the future');
+  for (let i=0; i<pizzaToppings.length; i++){
+    if (guessToppings === pizzaToppings[i] || guessToppings === 'mushroom' || guessToppings === 'olive'){
+      correct = true;
+      break;
+    }
   }
 
-  else if (pizzaToppings.includes(guessToppings) || guessToppings === 'mushroom' || guessToppings === 'olive') {
-    alert('Impressive! That\'s correct!');
-    score += 1;
-    break;
-  }
-
-  else {
-    alert('Please guess again, be creative!');
+  if (!correct) {
+    alert ('Try again');
   }
 }
+
+if (correct){
+  alert('Impressive, you guessed it!');
+  score += 1;
+}
+
 alert(`My top three favorite pizza toppings are: ${pizzaToppings[0]}, ${pizzaToppings[1]}, ${pizzaToppings[2]}`);
 
 alert(`Overall you answered ${score} out of 7 questions correctly.`);
-
-
-
-
-
-

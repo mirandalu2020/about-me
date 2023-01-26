@@ -77,7 +77,7 @@ function bagelQuestion(doILikeBagel) {
   doILikeBagel = prompt('Do I like to bagels? Y/N').toLowerCase();
   if (doILikeBagel === 'yes' || doILikeBagel === 'y') {
     //console.log('I actually can survive without bagels!');
-    alert('I actually can survive without pizza!');
+    alert('I actually can survive without bagels!');
   }
   else if (doILikeBagel === 'no' || doILikeBagel === 'n') {
     //console.log('You are correct!');
@@ -112,69 +112,63 @@ function bakingQuestion(doILikeBaking) {
 bakingQuestion();
 console.log(score);
 
-let placeTraveled = 21;
-let attemptsRemaining = 4;
 let userGuess = false;
-
 // Question 6
-while (attemptsRemaining > 0) {
-  attemptsRemaining--;
-  //console.log(`Attempts remaining: ${attemptsRemaining}`);
-  let guessNumber = parseInt(prompt('How many places have I traveled to in the US?'));
+function traveledQuestion(placeTraveled, attemptsRemaining = 4) {
+  while (attemptsRemaining > 0) {
+    attemptsRemaining--;
+    //console.log(`Attempts remaining: ${attemptsRemaining}`);
+    let guessNumber = parseInt(prompt('How many places have I traveled to in the US?'));
+    if (guessNumber === placeTraveled) {
+      alert('You are correct!');
+      return [score += 1, userGuess = true];
+    }
+    else if (guessNumber <= placeTraveled && guessNumber > 0) {
+      alert('I have been to more places than that');
+    }
+    else if (guessNumber >= placeTraveled && guessNumber <= 100) {
+      alert('I wish I\'ve traveled that often...');
+    }
 
-  if (guessNumber === placeTraveled) {
-    alert('You are correct!');
-    score += 1;
-    userGuess = true;
-    break;
+    else {
+      alert('Please enter a number between 1 and 100');
+    }
   }
-
-  else if (guessNumber <= placeTraveled && guessNumber > 0) {
-    alert('I have been to more places than that');
-  }
-
-  else if (guessNumber >= placeTraveled && guessNumber <= 100) {
-    alert('I wish I\'ve traveled that often...');
-  }
-
-  else {
-    alert('Please enter a number between 1 and 100');
+  if (userGuess === false) {
+    alert(`I've been to ${placeTraveled} in the United States`);
   }
 }
+traveledQuestion(21);
+console.log(score);
 
-if (userGuess === false) {
-  alert(`I've been to ${placeTraveled} in the United States`);
-}
-
-
-
-let pizzaToppings = ['mushrooms', 'truffle oil', 'olives'];
-attemptsRemaining = 6;
-let correct = false;
 
 // Question 7
-while (attemptsRemaining > 0 && !correct) {
-  attemptsRemaining--;
-  //console.log(attemptsRemaining);
+function pizzaToppingsQuestion(pizzaToppings = ['mushrooms', 'truffle oil', 'olives'], attemptsRemaining = 6) {
+  while (attemptsRemaining > 0 && !userGuess) {
+    attemptsRemaining--;
+    //console.log(attemptsRemaining);
 
-  let guessToppings = prompt('What\'s my favorite pizza topping?').toLowerCase();
-  for (let i = 0; i < pizzaToppings.length; i++) {
-    if (guessToppings === pizzaToppings[i] || guessToppings === 'mushroom' || guessToppings === 'olive') {
-      correct = true;
-      break;
+    let guessToppings = prompt('What\'s my favorite pizza topping?').toLowerCase();
+    for (let i = 0; i < pizzaToppings.length; i++) {
+      if (guessToppings === pizzaToppings[i] || guessToppings === 'mushroom' || guessToppings === 'olive') {
+        userGuess = true;
+        break;
+      }
+    }
+
+    if (!userGuess) {
+      alert('Try again');
     }
   }
 
-  if (!correct) {
-    alert('Try again');
+  if (userGuess) {
+    alert('Impressive, you guessed it!');
+    score += 1;
   }
-}
 
-if (correct) {
-  alert('Impressive, you guessed it!');
-  score += 1;
+  alert(`My top three favorite pizza toppings are: ${pizzaToppings[0]}, ${pizzaToppings[1]}, ${pizzaToppings[2]}`);
 }
-
-alert(`My top three favorite pizza toppings are: ${pizzaToppings[0]}, ${pizzaToppings[1]}, ${pizzaToppings[2]}`);
+pizzaToppingsQuestion();
+console.log(score);
 
 alert(`Overall you answered ${score} out of 7 questions correctly.`);

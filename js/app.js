@@ -1,29 +1,37 @@
 'use strict';
 console.log('this linked file is working');
 
-let score = 0;
+let score= 0;
 
+// Getting Name
+function getName(userName) {
+  userName = prompt('What\'s your name?');
+  //console.log('Welcome to my site, '+userName);
+  //console.log('Thank you for joinint me today, ' + userName);
+  alert('Welcome to my site, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase());
+  alert('Thank you for joining me today, ' + userName.charAt(0).toUpperCase() + userName.slice(1).toLowerCase());
+}
+getName();
 
-let userName = prompt('What\'s your name?');
-//console.log('Welcome to my site, '+userName);
-//console.log('Thank you for joinint me today, ' + userName);
-alert('Welcome to my site, '+userName.charAt(0).toUpperCase()+userName.slice(1).toLowerCase());
-alert('Thank you for joining me today, ' + userName.charAt(0).toUpperCase()+userName.slice(1).toLowerCase());
-
-let doIKnowYou = prompt('Do I know you? Y/N').toLocaleLowerCase();
-if (doIKnowYou === 'yes' || doIKnowYou === 'y') {
-  //console.log('Now I do for sure!') ;
-  alert('Now I do!');
-  score += 1;
+// Question 1
+function knowUser(doIKnowYou) {
+  doIKnowYou = prompt('Do I know you? Y/N').toLocaleLowerCase();
+  if (doIKnowYou === 'yes' || doIKnowYou === 'y') {
+    //console.log('Now I do for sure!') ;
+    alert('Now I do!');
+    return score++;
+  }
+  else if (doIKnowYou === 'no' || doIKnowYou === 'n') {
+    console.log('Now I do!');
+    alert('I am happy to get to know you!');
+  }
+  else {
+    //console.log('Please answer yes or no');
+    alert('Please answer yes or no');
+  }
 }
-else if (doIKnowYou === 'no' || doIKnowYou === 'n') {
-  console.log('Now I do!');
-  alert('I am happy to get to know you!');
-}
-else {
-  //console.log('Please answer yes or no');
-  alert('Please answer yes or no');
-}
+knowUser();
+console.log(score);
 
 let doILikeTravel = prompt('Do I like to travel? Y/N').toLowerCase();
 if (doILikeTravel === 'yes' || doILikeTravel === 'y') {
@@ -119,7 +127,7 @@ if (userGuess === false) {
 
 
 
-let pizzaToppings = ['mushrooms','truffle oil','olives'];
+let pizzaToppings = ['mushrooms', 'truffle oil', 'olives'];
 attemptsRemaining = 6;
 let correct = false;
 while (attemptsRemaining > 0 && !correct) {
@@ -127,19 +135,19 @@ while (attemptsRemaining > 0 && !correct) {
   //console.log(attemptsRemaining);
 
   let guessToppings = prompt('What\'s my favorite pizza topping?').toLowerCase();
-  for (let i=0; i<pizzaToppings.length; i++){
-    if (guessToppings === pizzaToppings[i] || guessToppings === 'mushroom' || guessToppings === 'olive'){
+  for (let i = 0; i < pizzaToppings.length; i++) {
+    if (guessToppings === pizzaToppings[i] || guessToppings === 'mushroom' || guessToppings === 'olive') {
       correct = true;
       break;
     }
   }
 
   if (!correct) {
-    alert ('Try again');
+    alert('Try again');
   }
 }
 
-if (correct){
+if (correct) {
   alert('Impressive, you guessed it!');
   score += 1;
 }

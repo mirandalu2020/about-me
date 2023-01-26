@@ -1,7 +1,7 @@
 'use strict';
 console.log('this linked file is working');
 
-let score= 0;
+let score = 0;
 
 // Getting Name
 function getName(userName) {
@@ -33,35 +33,46 @@ function knowUser(doIKnowYou) {
 knowUser();
 console.log(score);
 
-let doILikeTravel = prompt('Do I like to travel? Y/N').toLowerCase();
-if (doILikeTravel === 'yes' || doILikeTravel === 'y') {
-  //console.log('You are correct!');
-  alert('You are correct!');
-  score += 1;
+// Question 2
+function travelQuestion(doILikeTravel) {
+  doILikeTravel = prompt('Do I like to travel? Y/N').toLowerCase();
+  if (doILikeTravel === 'yes' || doILikeTravel === 'y') {
+    //console.log('You are correct!');
+    alert('You are correct!');
+    return score++;
+  }
+  else if (doILikeTravel === 'no' || doILikeTravel === 'n') {
+    //console.log('I actually like traveling sometimes');
+    alert('I actually like traveling sometimes');
+  }
+  else {
+    alert('Please answer yes or no');
+  }
 }
-else if (doILikeTravel === 'no' || doILikeTravel === 'n') {
-  //console.log('I actually like traveling sometimes');
-  alert('I actually like traveling sometimes');
-}
-else {
-  alert('Please answer yes or no');
-}
+travelQuestion();
+console.log(score);
 
-let doILikeBeach = prompt('Do I like beaches? Y/N').toLowerCase();
-if (doILikeBeach === 'yes' || doILikeBeach === 'y') {
-  //console.log('Not really, I don\'t like salty water');
-  alert('Not really, I don\'t like salty water');
+// Question 3
+function beachQuestion(doILikeBeach) {
+  doILikeBeach = prompt('Do I like beaches? Y/N').toLowerCase();
+  if (doILikeBeach === 'yes' || doILikeBeach === 'y') {
+    //console.log('Not really, I don\'t like salty water');
+    alert('Not really, I don\'t like salty water');
+  }
+  else if (doILikeBeach === 'no' || doILikeBeach === 'n') {
+    //console.log('You are correct!');
+    alert('You are correct!');
+    return score += 1;
+  }
+  else {
+    //console.log('Please answer yes or no');
+    alert('Please answer yes or no');
+  }
 }
-else if (doILikeBeach === 'no' || doILikeBeach === 'n') {
-  //console.log('You are correct!');
-  alert('You are correct!');
-  score += 1;
-}
-else {
-  //console.log('Please answer yes or no');
-  alert('Please answer yes or no');
-}
+beachQuestion();
+console.log(score);
 
+// Question 4
 let doILikeBagel = prompt('Do I like to bagels? Y/N').toLowerCase();
 if (doILikeBagel === 'yes' || doILikeBagel === 'y') {
   //console.log('I actually can survive without pizza!');
@@ -77,6 +88,7 @@ else {
   alert('Please answer yes or no');
 }
 
+// Question 5
 let doILikeBaking = prompt('Do I like to bake? Y/N').toLowerCase();
 if (doILikeBaking === 'yes' || doILikeBaking === 'y') {
   //console.log('Baking is one of the coolest thing!');
@@ -96,6 +108,7 @@ let placeTraveled = 21;
 let attemptsRemaining = 4;
 let userGuess = false;
 
+// Question 6
 while (attemptsRemaining > 0) {
   attemptsRemaining--;
   //console.log(`Attempts remaining: ${attemptsRemaining}`);
@@ -130,6 +143,8 @@ if (userGuess === false) {
 let pizzaToppings = ['mushrooms', 'truffle oil', 'olives'];
 attemptsRemaining = 6;
 let correct = false;
+
+// Question 7
 while (attemptsRemaining > 0 && !correct) {
   attemptsRemaining--;
   //console.log(attemptsRemaining);

@@ -73,36 +73,44 @@ beachQuestion();
 console.log(score);
 
 // Question 4
-let doILikeBagel = prompt('Do I like to bagels? Y/N').toLowerCase();
-if (doILikeBagel === 'yes' || doILikeBagel === 'y') {
-  //console.log('I actually can survive without pizza!');
-  alert('I actually can survive without pizza!');
+function bagelQuestion(doILikeBagel) {
+  doILikeBagel = prompt('Do I like to bagels? Y/N').toLowerCase();
+  if (doILikeBagel === 'yes' || doILikeBagel === 'y') {
+    //console.log('I actually can survive without bagels!');
+    alert('I actually can survive without pizza!');
+  }
+  else if (doILikeBagel === 'no' || doILikeBagel === 'n') {
+    //console.log('You are correct!');
+    alert('You are correct!');
+    return score += 1;
+  }
+  else {
+    //console.log('Please answer yes or no');
+    alert('Please answer yes or no');
+  }
 }
-else if (doILikeBagel === 'no' || doILikeBagel === 'n') {
-  //console.log('You are correct!');
-  alert('You are correct!');
-  score += 1;
-}
-else {
-  //console.log('Please answer yes or no');
-  alert('Please answer yes or no');
-}
+bagelQuestion();
+console.log(score);
 
 // Question 5
-let doILikeBaking = prompt('Do I like to bake? Y/N').toLowerCase();
-if (doILikeBaking === 'yes' || doILikeBaking === 'y') {
-  //console.log('Baking is one of the coolest thing!');
-  alert('Baking is one of the coolest thing!');
-  score += 1;
+function bakingQuestion(doILikeBaking) {
+  doILikeBaking = prompt('Do I like to bake? Y/N').toLowerCase();
+  if (doILikeBaking === 'yes' || doILikeBaking === 'y') {
+    //console.log('Baking is one of the coolest thing!');
+    alert('Baking is one of the coolest thing!');
+    return score += 1;
+  }
+  else if (doILikeBaking === 'no' || doILikeBaking === 'n') {
+    //console.log('I love baking :}');
+    alert('I actually love baking :}');
+  }
+  else {
+    //console.log('Please answer yes or no');
+    alert('Please answer yes or no');
+  }
 }
-else if (doILikeBaking === 'no' || doILikeBaking === 'n') {
-  //console.log('I love baking :}');
-  alert('I actually love baking :}');
-}
-else {
-  //console.log('Please answer yes or no');
-  alert('Please answer yes or no');
-}
+bakingQuestion();
+console.log(score);
 
 let placeTraveled = 21;
 let attemptsRemaining = 4;
